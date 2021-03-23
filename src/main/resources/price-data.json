@@ -1,0 +1,34 @@
+[
+  {
+    "_class": "com.myretail.pricechecker.model.Product",
+    "productId": 54456119,
+    "current_price": {
+      "value": 700,
+      "currency": "USD"
+    }
+  },
+  {
+    "_class": "com.myretail.pricechecker.model.Product",
+    "productId": 13860428,
+    "current_price": {
+      "value": 72,
+      "currency": "USD"
+    }
+  },
+  {
+    "_class": "com.myretail.pricechecker.model.Product",
+    "productId": 13264003,
+    "current_price": {
+      "value": 700,
+      "currency": "USD"
+    }
+  },
+  {
+    "_class": "com.myretail.pricechecker.model.Product",
+    "productId": 12954218,
+    "current_price": {
+      "value": 72,
+      "currency": "USD"
+    }
+  }
+]
