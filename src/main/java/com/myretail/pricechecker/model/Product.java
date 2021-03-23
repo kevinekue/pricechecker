@@ -1,10 +1,8 @@
 package com.myretail.pricechecker.model;
 
-import com.sun.org.apache.bcel.internal.generic.ObjectType;
-import net.minidev.json.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -12,34 +10,30 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 
 
-@Document(collection="items")
-public class Item {
+@Document(collection="Products")
+public class Product {
+// product_id => id
+// name => title
+//
 
 
+//    @JsonIgnore
     @Id
-    @JsonIgnore
     private ObjectId _id;
 
 //    @Indexed(unique = true)
-
-    private int id;
+    @JsonProperty("product_id")
+    private int productId;
+    @JsonProperty("product/item/product_description/title")
     private String name;
     Price current_price;
-/**
-   public ObjectId get_id() {
-        return _id;
+
+    public int getProductId() {
+        return productId;
     }
 
-    public void set_id(ObjectId _id) {
-        this._id = _id;
-    }
-*/
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getName() {
@@ -58,12 +52,12 @@ public class Item {
         this.current_price = current_price;
     }
 
-    public Item(int id, String name, Price current_price) {
-        this.id = id;
+    public Product(int productId, String name, Price current_price) {
+        this.productId = productId;
         this.name = name;
         this.current_price = current_price;
     }
 
-    public Item() {
+    public Product() {
     }
 }
