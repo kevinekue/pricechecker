@@ -3,6 +3,7 @@ package com.myretail.pricechecker.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -12,19 +13,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="Products")
 public class Product {
-// product_id => id
-// name => title
-//
 
-
-//    @JsonIgnore
     @Id
     private ObjectId _id;
-
-//    @Indexed(unique = true)
-//    @JsonProperty("product_id")
+    @Indexed
     private int productId;
-//    @JsonProperty("title")
     private String name;
     Price current_price;
 

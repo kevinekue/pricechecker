@@ -15,6 +15,11 @@ public class PricecheckerApplication {
         SpringApplication.run(PricecheckerApplication.class, args);
     }
 
+    /**
+     *
+     * @return Populates the MyRetail.Products database with the data contained in "resources\price-data.json"
+     * upon the start of the application
+     */
     @Bean
     public Jackson2RepositoryPopulatorFactoryBean populateProductRepo() {
         Jackson2RepositoryPopulatorFactoryBean factory = new Jackson2RepositoryPopulatorFactoryBean();
